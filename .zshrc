@@ -19,6 +19,7 @@ export ZSH=$HOME/.oh-my-zsh
 #ZSH_THEME="af-magic"
 #ZSH_THEME="typewritten"
 ZSH_THEME="oxide"
+#ZSH_THEME="rubyrussel"
 #export TYPEWRITTEN_CURSOR="beam"
 #export TYPEWRITTEN_MULTILINE=true
 #POWERLEVEL9K_MODE="nerdfont-complete"
@@ -82,9 +83,10 @@ ZSH_THEME="oxide"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(git)
 
-source $ZSH/oh-my-zsh.sh
-#plugins=(zsh-autosuggestions)
-source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+#source $ZSH/oh-my-zsh.sh
+
+
+
 # User configuration
 
 # export MANPATH="/usr/local/man:$MANPATH"
@@ -111,9 +113,21 @@ source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 figlet -c "vldeb"
-#vcl() {
-#	cd ~/cadence/vco
-#	source /opt/cadence/.bashrc
-#	virtuoso&
-#}
- bindkey -e
+
+#bindkey -e
+#plugin for colored man pages
+plugins=(git colored-man-pages)
+source $ZSH/oh-my-zsh.sh
+
+#plugin for autosuggestions
+source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+
+#plugin for syntax highlighting
+source ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets cursor)
+ZSH_HIGHLIGHT_STYLES[command]=fg=white,bold
+ZSH_HIGHLIGHT_STYLES[builtin]=fg=cyan,bold
+ZSH_HIGHLIGHT_STYLES[function]=fg=green,bold
+ZSH_HIGHLIGHT_STYLES[alias]=fg=yellow,bold
+ZSH_HIGHLIGHT_STYLES[path]=none
+#ZSH_HIGHLIGHT_STYLES[path_prefix]=none
