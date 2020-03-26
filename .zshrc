@@ -14,12 +14,25 @@ export ZSH=$HOME/.oh-my-zsh
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-
 #ZSH_THEME="agnoster"
 #ZSH_THEME="af-magic"
 #ZSH_THEME="typewritten"
-ZSH_THEME="oxide"
+#ZSH_THEME="oxide"
+#ZSH_THEME="gnzh"
 #ZSH_THEME="rubyrussel"
+# ZSH_THEME="avit"
+
+#*********Spaceship Theme Customisations********#
+ZSH_THEME="spaceship"
+SPACESHIP_CHAR_SYMBOL="❱ "
+# SPACESHIP_CHAR_SYMBOL=" "
+#SPACESHIP_USER_SHOW="always"
+SPACESHIP_HOST_PREFIX="@ "
+SPACESHIP_BATTERY_THRESHOLD="30"
+#SPACESHIP_CHAR_SYMBOL_SECONDARY="💔 "
+#SPACESHIP_EXIT_CODE_SHOW="true"
+
+
 #export TYPEWRITTEN_CURSOR="beam"
 #export TYPEWRITTEN_MULTILINE=true
 #POWERLEVEL9K_MODE="nerdfont-complete"
@@ -112,10 +125,11 @@ plugins=(git)
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-figlet -c "vldeb"
+
 
 #bindkey -e
 #plugin for colored man pages
+plugins=(git colorize)
 plugins=(git colored-man-pages)
 source $ZSH/oh-my-zsh.sh
 
@@ -131,3 +145,18 @@ ZSH_HIGHLIGHT_STYLES[function]=fg=green,bold
 ZSH_HIGHLIGHT_STYLES[alias]=fg=yellow,bold
 ZSH_HIGHLIGHT_STYLES[path]=none
 #ZSH_HIGHLIGHT_STYLES[path_prefix]=none
+ZSH_THEME="af-magic"
+#aliases
+alias install="sudo apt install"
+alias update="sudo apt update"
+alias upgrade="sudo apt upgrade"
+alias zrc="subl ~/.zshrc"
+alias -s txt=subl
+alias -s py=subl
+alias p2="python2"
+alias p3="python3"
+
+# virtualenv and virtualenvwrapper
+export WORKON_HOME=$HOME/.virtualenvs
+export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
+source /usr/local/bin/virtualenvwrapper.sh
