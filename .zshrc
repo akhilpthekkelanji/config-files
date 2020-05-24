@@ -94,7 +94,7 @@ SPACESHIP_BATTERY_THRESHOLD="30"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
+
 
 #source $ZSH/oh-my-zsh.sh
 
@@ -129,14 +129,14 @@ plugins=(git)
 
 #bindkey -e
 #plugin for colored man pages
-plugins=(git colorize)
-plugins=(git colored-man-pages)
+
+plugins=(git common-aliases)
 source $ZSH/oh-my-zsh.sh
 
 #plugin for autosuggestions
 source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 
-#plugin for syntax highlighting
+# plugin for syntax highlighting
 source ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets cursor)
 ZSH_HIGHLIGHT_STYLES[command]=fg=white,bold
@@ -144,19 +144,18 @@ ZSH_HIGHLIGHT_STYLES[builtin]=fg=cyan,bold
 ZSH_HIGHLIGHT_STYLES[function]=fg=green,bold
 ZSH_HIGHLIGHT_STYLES[alias]=fg=yellow,bold
 ZSH_HIGHLIGHT_STYLES[path]=none
-#ZSH_HIGHLIGHT_STYLES[path_prefix]=none
-ZSH_THEME="af-magic"
+ZSH_HIGHLIGHT_STYLES[path_prefix]=none
+#ZSH_THEME="af-magic"
 #aliases
 alias install="sudo apt install"
 alias update="sudo apt update"
 alias upgrade="sudo apt upgrade"
-alias zrc="subl ~/.zshrc"
-alias -s txt=subl
-alias -s py=subl
 alias p2="python2"
 alias p3="python3"
+alias plotxl="python3 ~/projects/python/plotxl/plotxl.py"
 
 # virtualenv and virtualenvwrapper
 export WORKON_HOME=$HOME/.virtualenvs
 export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
 source /usr/local/bin/virtualenvwrapper.sh
+echo vldeb | figlet -c
